@@ -1,0 +1,146 @@
+:root {
+    --softRed: hsl(10, 79%, 65%);
+    --cyan: hsl(186, 34%, 60%);
+    --darkBrown: hsl(25, 47%, 15%);
+    --mediumBrown: hsl(28, 10%, 53%);
+    --cream: hsl(27, 66%, 92%);
+    --paleOrange: hsl(33, 100%, 98%);
+
+}
+
+* {
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+body {
+    background-color: var(--cream);
+    height: 100vh;
+}
+
+.attribution { 
+    font-size: 11px; 
+    text-align: center; 
+}
+
+.attribution a { 
+    color:hsl(10, 79%, 65%);
+}
+
+main {
+    width: 450px;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    margin: 100px auto;
+   
+}
+
+.top {
+    background-color: var(--softRed);
+    color:hsl(33, 100%, 98%);
+    border-radius: 12px;
+    margin-bottom: 5%;
+    display: inherit;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+}
+
+.balance {
+    margin-top: 4%;
+    margin-left: 4%;
+}
+
+#balance-title {
+    font-size: .8rem;
+    margin: 0;
+}
+
+#amount {
+    font-size: 1.3rem;
+    font-weight: 700;
+    padding: 0;
+}
+
+.top img {
+    height: 45%;
+    margin-right: 4%;
+}
+
+.bottom h1 {
+    margin: 5% 8%;
+}
+
+#myChart {
+    width: 200px;
+    padding: 10px 0;
+}
+
+hr {
+    width: 80%;
+    margin: 1% auto 5%;
+    color: var(--mediumBrown);
+}
+
+.bottom {
+    background-color: var(--paleOrange);
+    border-radius: 12px;
+    color: var(--darkBrown)
+}
+
+.bottom h1 {
+    font-size: 1.4rem;
+    font-weight: 700;
+}
+
+.monthly-total {
+    display: flex;
+    justify-content: space-between;
+    height: 80px;
+    margin-bottom: 8px;
+}
+
+.monthly {
+    display: inherit;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0 25px;
+}
+
+.monthly-amount {
+    color: var(--mediumBrown);
+    font-size: .8rem;
+    margin: 0;
+}
+
+.larger {
+    font-size: 2.1rem;
+    font-weight: 700;
+    color:hsl(25, 47%, 15%)
+}
+
+.align-right {
+    align-items: flex-end;
+}
+
+#increase {
+    font-weight: 700;
+    margin: 0;
+}
+
+
+
+footer {
+    position: absolute;
+    bottom: 2%;
+    left: 25%;
+    width: 50%;
+    color:hsl(10, 79%, 65%)
+}
+
+@media (max-width: 600px) {
+    main {
+        width: 80vw;
+    }
+}
