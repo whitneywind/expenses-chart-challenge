@@ -1,3 +1,16 @@
+/* box sizing rules */
+*, 
+*::before, 
+*::after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* remove default margin */
+body, h1, p, figure, blockquote, dl, dd {
+    margin: 0;
+}
+
 :root {
     --softRed: hsl(10, 79%, 65%);
     --cyan: hsl(186, 34%, 60%);
@@ -5,7 +18,6 @@
     --mediumBrown: hsl(28, 10%, 53%);
     --cream: hsl(27, 66%, 92%);
     --paleOrange: hsl(33, 100%, 98%);
-
 }
 
 * {
@@ -28,12 +40,11 @@ body {
 }
 
 main {
-    width: 450px;
-    max-width: 500px;
+    width: 520px;
+    max-width: 520px;
     display: flex;
     flex-direction: column;
     margin: 100px auto;
-   
 }
 
 .top {
@@ -48,19 +59,16 @@ main {
 }
 
 .balance {
-    margin-top: 4%;
-    margin-left: 4%;
+    margin: 5% 4%;
 }
 
 #balance-title {
     font-size: .8rem;
-    margin: 0;
 }
 
-#amount {
-    font-size: 1.3rem;
-    font-weight: 700;
-    padding: 0;
+#top-amount {
+    font-size: 1.5rem;
+    padding: 0; 
 }
 
 .top img {
@@ -72,21 +80,86 @@ main {
     margin: 5% 8%;
 }
 
+.chart-wrapper {
+    padding: 2px 40px;
+}
+
+.charts {
+    display: flex;
+    height: 213px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    padding-bottom: 26px;
+    border-bottom: 2px solid var(--cream);
+}
+.chart {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 8px;
+}
+.chart-bar {
+    height: 0%;
+    width: 90%;
+    position: relative;
+    cursor: pointer;
+    opacity: 0;
+    background-color: var(--softRed);
+    border-radius: 5px;
+}
+.chart-bar:hover {
+    background-color: hsla(10, 79%, 65%, 0.63);
+}
+
+.chart-bar::before {
+    position: absolute;
+    content: '$' attr(data-value);
+    background-color: var(--darkBrown);
+    color: rgb(255, 247, 231);
+    padding: 8px;
+    top: -45px;
+    transform: translate(-50%, 0);
+    opacity: 0;
+    transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.chart:hover .chart-bar::before {
+    opacity: 1;
+    transform: translate(-50%, -10%);
+    transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+}
+
+.current .chart-bar {
+	background-color: var(--cyan);
+}
+.current .chart-bar:hover {
+	background-color: hsla(186, 34%, 60%, 0.625);
+}
+
+
+
+
 #myChart {
     width: 200px;
-    padding: 10px 0;
+    padding: 10px 0 20px;
+    border-bottom: 1px solid var(--cream);
+    margin-bottom: 20px;
 }
 
 hr {
-    width: 80%;
+    width: 85%;
     margin: 1% auto 5%;
-    color: var(--mediumBrown);
+    border: 1px solid var(--cream);
 }
 
 .bottom {
     background-color: var(--paleOrange);
     border-radius: 12px;
-    color: var(--darkBrown)
+    color: var(--darkBrown);
 }
 
 .bottom h1 {
@@ -97,27 +170,25 @@ hr {
 .monthly-total {
     display: flex;
     justify-content: space-between;
-    height: 80px;
-    margin-bottom: 8px;
+    margin-bottom: 25px;
 }
 
 .monthly {
     display: inherit;
     flex-direction: column;
-    justify-content: center;
+    justify-content: center;;
     margin: 0 25px;
 }
 
 .monthly-amount {
     color: var(--mediumBrown);
-    font-size: .8rem;
+    font-size: .9rem;
     margin: 0;
 }
 
 .larger {
-    font-size: 2.1rem;
-    font-weight: 700;
-    color:hsl(25, 47%, 15%)
+    font-size: 2.4rem;
+    color:hsla(25, 47%, 15%)
 }
 
 .align-right {
